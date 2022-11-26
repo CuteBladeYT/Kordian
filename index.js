@@ -3,12 +3,20 @@ const express = require("express");
 const socketio = require("socket.io");
 const path = require("path");
 
-const repldb = require("@replit/database")();
-
 const { initializeApp } = require("firebase/app");
+
 const firebaseConfig = {
-    
+    apiKey: process.env.apiKey,
+    authDomain: process.env.authDomain,
+    databaseURL: process.env.databaseURL,
+    projectId: process.env.projectId,
+    storageBucket: process.env.storageBucket,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.appId,
+    measurementId: process.env.measurementId
 };
+
+const fbapp = initializeApp(firebaseConfig);
 
 const SERVER_PORT = 3000;
 const SERVER_URL = `http://localhost:${SERVER_PORT}`;
