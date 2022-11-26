@@ -3,6 +3,8 @@ const express = require("express");
 const socketio = require("socket.io");
 const path = require("path");
 
+const repldb = require("@replit/database")();
+
 const { initializeApp } = require("firebase/app");
 const firebaseConfig = {
     
